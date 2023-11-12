@@ -7,7 +7,8 @@
  *                                                                                           *
  ******************************************************************************************* */
 
-/**
+/** 1
+ *
  * Returns an area of a rectangle given by width and height.
  *
  * @param {number} width
@@ -23,7 +24,8 @@ function getRectangleArea(width, height) {
   // throw new Error('Not implemented');
 }
 
-/**
+/** 2
+ *
  * Returns a circumference of circle given by radius.
  *
  * @param {number} radius
@@ -39,7 +41,7 @@ function getCircleCircumference(radius) {
   // throw new Error('Not implemented');
 }
 
-/**
+/** 3
  * Returns an average of two given numbers.
  *
  * @param {number} value1
@@ -56,7 +58,7 @@ function getAverage(value1, value2) {
   // throw new Error('Not implemented');
 }
 
-/**
+/** 4
  * Returns a distance between two points by cartesian coordinates.
  *
  * @param {number} x1
@@ -76,7 +78,7 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
   // throw new Error('Not implemented');
 }
 
-/**
+/** 5
  * Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
  *
  * @param {number} a
@@ -97,7 +99,7 @@ function getLinearEquationRoot(a, b) {
   // throw new Error('Not implemented');
 }
 
-/**
+/** 6
  * Returns an angle (in radians) between two vectors given by xi and yi,
  * coordinates in Cartesian plane.
  * See details https://en.wikipedia.org/wiki/Euclidean_vector#Representations
@@ -124,7 +126,7 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
   // throw new Error('Not implemented');
 }
 
-/**
+/** 7
  * Returns a last digit of a integer number.
  * The input parameter will always be greater than or equal to zero and will be in decimal notation.
  *
@@ -142,7 +144,7 @@ function getLastDigit(value) {
   // throw new Error('Not implemented');
 }
 
-/**
+/** 8
  * Returns a number by given string representation.
  *
  * @param {string} value
@@ -158,7 +160,7 @@ function parseNumberFromString(value) {
   // throw new Error('Not implemented');
 }
 
-/**
+/** 9
  * Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
  *
  * @param {number} a
@@ -176,7 +178,7 @@ function getParallelepipedDiagonal(a, b, c) {
   // throw new Error('Not implemented');
 }
 
-/**
+/** 10
  * Returns the number rounded to specified power of 10.
  *
  * @param {number} num
@@ -198,7 +200,7 @@ function roundToPowerOfTen(num, pow) {
   // throw new Error('Not implemented');
 }
 
-/**
+/** 11
  * Returns true is the number is prime; otherwise false.
  * See: https://en.wikipedia.org/wiki/Primality_test
  *
@@ -236,7 +238,7 @@ function isPrime(n) {
   // throw new Error('Not implemented');
 }
 
-/**
+/** 12
  * Tries to convert value to number and returns it if conversion was successful;
  * otherwise returns default value passed as a second argument.
  *
@@ -262,7 +264,7 @@ function toNumber(value, def) {
   // throw new Error('Not implemented');
 }
 
-/**
+/** 13
  * Returns the cube of the given number.
  *
  * @param {number} num
@@ -273,11 +275,12 @@ function toNumber(value, def) {
  *   -2 => -8
  *   0  => 0
  */
-function getCube(/* num */) {
-  throw new Error('Not implemented');
+function getCube(num) {
+  return num * num ** 2;
+  // throw new Error('Not implemented');
 }
 
-/**
+/** 14
  * Returns the Fibonacci number located at the index position.
  *
  * @param {number} index
@@ -290,8 +293,29 @@ function getCube(/* num */) {
  *   3  => 2
  *   10 => 55
  */
-function getFibonacciNumber(/* index */) {
-  throw new Error('Not implemented');
+function getFibonacciNumber(index) {
+  let result = 0;
+  let i = 0;
+  let previousNumber1;
+  let previousNumber2;
+  let p;
+  if (index === 0) {
+    result = 0;
+  } else if (index === 1) {
+    result = 1;
+  } else {
+    previousNumber1 = 0;
+    previousNumber2 = 1;
+    while (i < index - 2) {
+      p = previousNumber1;
+      previousNumber1 = previousNumber2;
+      previousNumber2 = p + previousNumber1;
+      i += 1;
+    }
+    result = previousNumber1 + previousNumber2;
+  }
+  return result;
+  // throw new Error('Not implemented');
 }
 
 /**
