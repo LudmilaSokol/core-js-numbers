@@ -318,7 +318,7 @@ function getFibonacciNumber(index) {
   // throw new Error('Not implemented');
 }
 
-/**
+/** 15
  * Returns the sum of all numbers from 1 to n.
  *
  * @param {number} n
@@ -329,11 +329,16 @@ function getFibonacciNumber(index) {
  *   10 => 55 // (1+2+3+...+10)
  *   1  => 1
  */
-function getSumToN(/* n */) {
-  throw new Error('Not implemented');
+function getSumToN(n) {
+  let result = 0;
+  for (let i = 0; i <= n; i += 1) {
+    result += i;
+  }
+  return result;
+  // throw new Error('Not implemented');
 }
 
-/**
+/** 16
  * Returns the sum of the digits of a given number.
  *
  * @param {number} num
@@ -344,11 +349,18 @@ function getSumToN(/* n */) {
  *   202 => 4  // (2+0+2)
  *   5   => 5  // 5
  */
-function getSumOfDigits(/* num */) {
-  throw new Error('Not implemented');
+function getSumOfDigits(num) {
+  let result = 0;
+  let number = num;
+  while (number > 0) {
+    result += number % 10;
+    number = Math.floor(number / 10);
+  }
+  return result;
+  // throw new Error('Not implemented');
 }
 
-/**
+/** 17
  * Returns true if the given number is a power of two, false otherwise.
  *
  * @param {number} num
@@ -359,11 +371,22 @@ function getSumOfDigits(/* num */) {
  *   16  => true
  *   15  => false
  */
-function isPowerOfTwo(/* num */) {
-  throw new Error('Not implemented');
+function isPowerOfTwo(num) {
+  let result = false;
+  let number = num;
+  while (number > 1) {
+    if (number % 2 === 0) {
+      result = true;
+    } else {
+      result = false;
+    }
+    number = Math.floor(number / 2);
+  }
+  return result;
+  // throw new Error('Not implemented');
 }
 
-/**
+/** 18
  * Returns the sine of a number.
  *
  * @param {number} num
@@ -373,11 +396,12 @@ function isPowerOfTwo(/* num */) {
  *   0 => 0
  *   Math.PI / 2 => 1
  */
-function getSine(/* num */) {
-  throw new Error('Not implemented');
+function getSine(num) {
+  return Math.sin(num);
+  // throw new Error('Not implemented');
 }
 
-/**
+/** 19
  * Returns a string representation of a number in a specified base (radix).
  *
  * @param {number} number
@@ -388,11 +412,12 @@ function getSine(/* num */) {
  * 255, 16 => 'ff'
  * 2, 2    => '10'
  */
-function numberToStringInBase(/* number, base */) {
-  throw new Error('Not implemented');
+function numberToStringInBase(number, base) {
+  return number.toString(base);
+  // throw new Error('Not implemented');
 }
 
-/**
+/** 20
  * Returns a string representation of a number in exponential notation.
  *
  * @param {number} number
@@ -402,11 +427,12 @@ function numberToStringInBase(/* number, base */) {
  * @example:
  * 12345, 2    => '1.23e+4'
  */
-function toExponential(/* number, fractionDigits */) {
-  throw new Error('Not implemented');
+function toExponential(number, fractionDigits) {
+  return number.toExponential(fractionDigits);
+  // throw new Error('Not implemented');
 }
 
-/**
+/** 21
  * Returns a string representation of a number in fixed-point notation.
  *
  * @param {number} number
@@ -417,11 +443,12 @@ function toExponential(/* number, fractionDigits */) {
  * 12345, 2    => '12345.00'
  * 12.345, 1   => '12.3'
  */
-function toFixed(/* number, fractionDigits */) {
-  throw new Error('Not implemented');
+function toFixed(number, fractionDigits) {
+  return number.toFixed(fractionDigits);
+  // throw new Error('Not implemented');
 }
 
-/**
+/** 22
  * Returns a string representation of a number in normal (fixed-point or exponential)
  * notation rounded to precision significant digits.
  *
@@ -433,11 +460,12 @@ function toFixed(/* number, fractionDigits */) {
  * 12345, 7    => '12345.00'
  * 12.345, 4   => '12.35'
  */
-function toPrecision(/* number, precision */) {
-  throw new Error('Not implemented');
+function toPrecision(number, precision) {
+  return number.toPrecision(precision);
+  // throw new Error('Not implemented');
 }
 
-/**
+/** 23
  * Returns the primitive value of a Number object.
  *
  * @param {Number} number
@@ -447,11 +475,12 @@ function toPrecision(/* number, precision */) {
  * new Number(5) => 5
  * Number(-5)    => -5
  */
-function getNumberValue(/* number */) {
-  throw new Error('Not implemented');
+function getNumberValue(number) {
+  return number.valueOf();
+  // throw new Error('Not implemented');
 }
 
-/**
+/** 24
  * Returns a boolean value indicating whether the parameter is a number or not.
  *
  * @param {number} number
@@ -466,11 +495,18 @@ function getNumberValue(/* number */) {
  * 5        => true
  * '5'      => false
  */
-function isNumber(/* number */) {
-  throw new Error('Not implemented');
+function isNumber(number) {
+  let result;
+  if (typeof number === 'number' && Number.isFinite(number)) {
+    result = true;
+  } else {
+    result = false;
+  }
+  return result;
+  // throw new Error('Not implemented');
 }
 
-/**
+/** 25
  * Returns a boolean value indicating whether a number is an integer or not.
  *
  * @param {number} number
@@ -481,8 +517,11 @@ function isNumber(/* number */) {
  * 5.1  => false
  * '5'  => false
  */
-function isInteger(/* number */) {
-  throw new Error('Not implemented');
+function isInteger(number) {
+  let result = false;
+  if (Number.isInteger(number)) result = true;
+  return result;
+  // throw new Error('Not implemented');
 }
 
 /**
